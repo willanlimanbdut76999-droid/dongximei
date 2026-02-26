@@ -164,9 +164,9 @@ const CONTENT = {
   zh: {
     company: '洞悉美',
     tagline: '洞察每一处细节之美',
-    phone: '+86 13800138000',
+    phone: '+86 17683775684',
     email: 'willanlimanbdut76999@gmail.com',
-    whatsapp: '+86 13800138000',
+    whatsapp: '+86 17683775684',
     website: 'dongximei.vercel.app',
 
     nav: ['产品', '能力', '项目', '为什么选我们', '联系我们'],
