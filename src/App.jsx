@@ -3,12 +3,12 @@ import React, { useState, useEffect, useRef } from 'react';
 /* ─── BILINGUAL CONTENT ─── */
 const CONTENT = {
   en: {
-    company: 'Dongxi Mei',
-    tagline: 'Metal Facade Systems',
-    phone: '+04407724707293',
+    company: 'Insight Beauty',
+    tagline: 'See the Beauty in Every Detail',
+    phone: '+44 07724707293',
     email: 'willanlimanbdut76999@gmail.com',
-    whatsapp: '+04407724707293',
-    website: 'www.dongximei.top',
+    whatsapp: '+44 07724707293',
+    website: 'dongximei.vercel.app',
 
     nav: ['Products', 'Capabilities', 'Projects', 'Why Us', 'Contact'],
 
@@ -46,7 +46,7 @@ const CONTENT = {
           'Warranty: 10-year coating warranty',
         ],
         image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
-        color: '#1a2035',
+        color: '#f0f4ff',
       },
       {
         id: 'perforated',
@@ -66,7 +66,7 @@ const CONTENT = {
           'Acoustic & Solar control available',
         ],
         image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=900&q=80',
-        color: '#141b2b',
+        color: '#f5f5ff',
       },
       {
         id: 'custom',
@@ -78,94 +78,96 @@ const CONTENT = {
           'Structural load analysis per EN / AISC / AS standards',
           'Wind load calculation & glazing design',
           'Thermal bridging & condensation analysis',
-          'Shop drawings & fabrication packs (ISO)',
-          'Mock-up fabrication & testing',
+          'Shop drawings & fabrication packages (ISO)',
+          'Prototype & mock-up testing',
           'Connection detailing & anchor design',
           'Seismic & movement joint engineering',
-          'On-site QA / installation supervision',
+          'On-site quality inspection / installation supervision',
           'As-built documentation & O&M manuals',
         ],
         image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80',
-        color: '#0f1620',
+        color: '#f8f9fa',
       },
     ],
 
     capabilities: [
-      { icon: '◈', title: 'Deep Design & Engineering', body: 'In-house facade deepening team produces fabrication-ready shop drawings, connection details, and structural coordination packages.' },
-      { icon: '◉', title: 'Precision Fabrication', body: 'CNC punching, laser cutting, and press-brake forming to ±0.2mm tolerances. Surface treatment and PVDF coating in-house.' },
-      { icon: '◎', title: 'Project Management', body: 'From material procurement to site installation, we manage the full delivery chain with weekly progress reporting.' },
-      { icon: '⊕', title: 'Quality Assurance', body: 'ISO-aligned QA processes. Every panel batch tested for coating adhesion, impact resistance, and dimensional accuracy before dispatch.' },
+      { icon: '◈', title: 'Design & Engineering', body: 'In-house facade deepening team producing fabrication-ready shop drawings, connection details, and structural coordination packages.' },
+      { icon: '◉', title: 'Precision Manufacturing', body: 'CNC punching, laser cutting, and press-brake forming at ±0.2mm tolerance. PVDF coating applied in-house.' },
+      { icon: '◎', title: 'Project Management', body: 'From material procurement to site installation, we manage the delivery chain end-to-end with weekly progress reporting.' },
+      { icon: '⊕', title: 'Quality Assurance', body: 'ISO-compliant QMS. Every batch tested for coating adhesion, impact resistance, and dimensional accuracy before dispatch.' },
     ],
 
     projects: [
-      { name: 'Corporate HQ Facade', location: 'Guangzhou, China', type: 'Aluminum Composite Panel', sqm: '4,200 m²' },
-      { name: 'Retail Mall Atrium', location: 'Shenzhen, China', type: 'Perforated Screen', sqm: '1,800 m²' },
-      { name: 'Hotel Tower Cladding', location: 'Chengdu, China', type: 'PVDF Panel System', sqm: '6,500 m²' },
+      { name: 'Corporate HQ Facade', location: 'Guangzhou, China', type: 'ACP Cladding', sqm: '4,200 m²' },
+      { name: 'Shopping Mall Atrium', location: 'Shenzhen, China', type: 'Perforated Panel', sqm: '1,800 m²' },
+      { name: 'Hotel Tower Envelope', location: 'Chengdu, China', type: 'PVDF Panel System', sqm: '6,500 m²' },
       { name: 'Airport Terminal', location: 'Wuhan, China', type: 'Custom Perforated', sqm: '9,000 m²' },
-      { name: 'Mixed-Use Development', location: 'Hangzhou, China', type: 'ACP + Perf Combo', sqm: '3,400 m²' },
-      { name: 'Museum Facade', location: "Xi'an, China", type: 'Anodized Panel', sqm: '2,100 m²' },
+      { name: 'Mixed-Use Development', location: 'Hangzhou, China', type: 'ACP + Perforated', sqm: '3,400 m²' },
+      { name: 'Museum Exterior', location: "Xi'an, China", type: 'Anodized Panel', sqm: '2,100 m²' },
     ],
 
     whyus: [
-      { title: 'Factory Direct', body: 'No middlemen. Direct pricing from our own production facility reduces cost and lead time.' },
-      { title: 'English-Speaking Team', body: 'Dedicated international project managers fluent in English handle your project from inquiry to delivery.' },
-      { title: 'Sample Before Order', body: 'Full-size finish samples and system mock-ups dispatched before production commitment.' },
-      { title: 'Export Experience', body: 'Familiar with international logistics, Incoterms, and customs documentation for seamless cross-border delivery.' },
+      { title: 'Factory Direct', body: 'No middlemen. We quote directly from our own production facility — lower cost, faster lead time.' },
+      { title: 'English-Speaking Team', body: 'Dedicated English-speaking project managers from enquiry to delivery.' },
+      { title: 'Sample Before Order', body: 'Full-size samples and system mock-ups provided before production commitment.' },
+      { title: 'Export Experienced', body: 'Familiar with international logistics, trade terms, and customs documentation for smooth cross-border delivery.' },
     ],
 
-    contact: {
-      headline: 'Start Your Project',
-      sub: "Send us your drawings or a brief project description and we'll respond within 24 hours.",
-      sendBtn: 'Send Enquiry',
-      sentBtn: '✓ Email Client Opened',
-      namePh: 'Your Name *',
-      companyPh: 'Company',
-      emailPh: 'Email Address *',
-      msgPh: 'Tell us about your project — material, dimensions, location...',
-      sendLabel: 'Send an Enquiry',
-      getInTouch: 'Get In Touch',
-      orWhatsapp: 'Or reach us directly via WhatsApp for faster response',
-    },
-
-    whySection: {
-      eyebrow: 'Why Dongxi Mei',
-      headline: ['Built for', 'International', 'Projects'],
-      body: "We've spent over 15 years perfecting our systems, quality controls, and international delivery process. Whether you're an architect in London or a developer in Dubai, our team is ready to support your next facade project.",
-      cta: 'Start a Conversation',
-    },
-
-    footer: { rights: '© 2024 Dongxi Mei Engineering. All rights reserved.' },
-
     productsSection: {
-      eyebrow: 'Our Products',
-      headline: 'Metal Panel Solutions',
+      eyebrow: 'Product Range',
+      headline: 'Engineered Metal Facade Solutions',
       specsLabel: 'Technical Specifications',
-      customNote: 'Custom sizes & finishes available on request',
-      enquireBtn: 'Enquire This Product',
+      enquireBtn: 'Enquire via WhatsApp',
+      customNote: 'Custom sizes, finishes, and configurations available on request.',
     },
 
     capsSection: {
       eyebrow: 'What We Do',
       headlineA: 'End-to-End',
-      headlineB: 'Capabilities',
-      sub: 'From initial design development through to site installation, our integrated team handles every phase of complex metal facade projects.',
+      headlineB: 'Facade Capability',
+      sub: 'From initial concept through to installed facade — we handle design, fabrication, quality control, and project coordination.',
     },
 
     projectsSection: {
-      eyebrow: 'Portfolio',
+      eyebrow: 'Track Record',
       headlineA: 'Selected',
       headlineB: 'Projects',
-      requestNote: 'Full project portfolio available upon request —',
+      requestNote: 'Full project portfolio available on request —',
+    },
+
+    whySection: {
+      eyebrow: 'Why Choose Us',
+      headline: ['Your Facade', 'Partner,', 'Not Just a Supplier'],
+      body: 'We combine factory-direct pricing with international project management capability. Every project gets a dedicated coordinator, transparent timeline, and quality documentation.',
+      cta: 'Start a Conversation',
+    },
+
+    contact: {
+      getInTouch: 'Get in Touch',
+      headline: 'Start Your Project',
+      sub: 'Send us your drawings or a brief project description and we\'ll respond within 24 hours.',
+      sendBtn: 'Send Enquiry',
+      sentBtn: '✓ Mail Client Opened',
+      namePh: 'Your Name *',
+      companyPh: 'Company',
+      emailPh: 'Email Address *',
+      msgPh: 'Project details — material, area, location, timeline...',
+      sendLabel: 'Send Us a Message',
+      orWhatsapp: 'Or message us directly on WhatsApp for faster response.',
+    },
+
+    footer: {
+      rights: '© 2025 Insight Beauty. All rights reserved.',
     },
   },
 
   zh: {
-    company: '东西美',
-    tagline: '金属幕墙系统',
-    phone: '+04407724707293',
+    company: '洞悉美',
+    tagline: '洞察每一处细节之美',
+    phone: '+86 13800138000',
     email: 'willanlimanbdut76999@gmail.com',
-    whatsapp: '+04407724707293',
-    website: 'www.dongximei.top',
+    whatsapp: '+86 13800138000',
+    website: 'dongximei.vercel.app',
 
     nav: ['产品', '能力', '项目', '为什么选我们', '联系我们'],
 
@@ -203,7 +205,7 @@ const CONTENT = {
           '质保：涂层 10 年质量保证',
         ],
         image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
-        color: '#1a2035',
+        color: '#f0f4ff',
       },
       {
         id: 'perforated',
@@ -223,7 +225,7 @@ const CONTENT = {
           '可提供声学及太阳能控制设计',
         ],
         image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=900&q=80',
-        color: '#141b2b',
+        color: '#f5f5ff',
       },
       {
         id: 'custom',
@@ -243,7 +245,7 @@ const CONTENT = {
           '竣工文件及运维手册',
         ],
         image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80',
-        color: '#0f1620',
+        color: '#f8f9fa',
       },
     ],
 
@@ -270,7 +272,37 @@ const CONTENT = {
       { title: '出口经验丰富', body: '熟悉国际物流、贸易术语及海关文件，确保跨境交货顺畅无忧。' },
     ],
 
+    productsSection: {
+      eyebrow: '产品系列',
+      headline: '工程级金属幕墙解决方案',
+      specsLabel: '技术参数',
+      enquireBtn: '通过 WhatsApp 询价',
+      customNote: '可根据需求定制尺寸、表面处理及配置方案。',
+    },
+
+    capsSection: {
+      eyebrow: '服务能力',
+      headlineA: '端到端',
+      headlineB: '幕墙全流程能力',
+      sub: '从初始概念到安装完成——我们负责设计、制造、质量控制及项目协调。',
+    },
+
+    projectsSection: {
+      eyebrow: '项目业绩',
+      headlineA: '精选',
+      headlineB: '项目案例',
+      requestNote: '完整项目案例集可应要求提供 —',
+    },
+
+    whySection: {
+      eyebrow: '为什么选择我们',
+      headline: ['您的幕墙', '合作伙伴，', '而非仅仅是供应商'],
+      body: '我们将工厂直供价格与国际项目管理能力相结合。每个项目配备专属协调人、透明时间表及质量文件。',
+      cta: '开始对话',
+    },
+
     contact: {
+      getInTouch: '联系我们',
       headline: '启动您的项目',
       sub: '发送图纸或简要项目描述，我们将在 24 小时内回复。',
       sendBtn: '发送询盘',
@@ -278,202 +310,122 @@ const CONTENT = {
       namePh: '您的姓名 *',
       companyPh: '公司名称',
       emailPh: '邮箱地址 *',
-      msgPh: '请描述您的项目——材料、尺寸、位置……',
-      sendLabel: '发送询盘',
-      getInTouch: '联系我们',
-      orWhatsapp: '或通过 WhatsApp 直接联系我们，回复更快',
+      msgPh: '项目详情 — 材料、面积、地点、时间节点...',
+      sendLabel: '给我们留言',
+      orWhatsapp: '或通过 WhatsApp 直接联系我们，获得更快回复。',
     },
 
-    whySection: {
-      eyebrow: '为什么选择东西美',
-      headline: ['专为', '国际', '项目而生'],
-      body: '15 年来，我们持续完善系统、质量管控和国际交付流程。无论您是伦敦的建筑师还是迪拜的开发商，我们的团队随时准备支持您的下一个幕墙项目。',
-      cta: '立即开始沟通',
-    },
-
-    footer: { rights: '© 2024 东西美工程有限公司 版权所有' },
-
-    productsSection: {
-      eyebrow: '我们的产品',
-      headline: '金属板系统',
-      specsLabel: '技术规格参数',
-      customNote: '支持定制尺寸及饰面，欢迎询价',
-      enquireBtn: '产品询价',
-    },
-
-    capsSection: {
-      eyebrow: '我们的服务',
-      headlineA: '端到端',
-      headlineB: '全方位能力',
-      sub: '从初步设计开发到现场安装，我们的综合团队负责复杂金属幕墙项目的每一个阶段。',
-    },
-
-    projectsSection: {
-      eyebrow: '项目案例',
-      headlineA: '精选',
-      headlineB: '项目',
-      requestNote: '完整项目案例集请来函索取 —',
+    footer: {
+      rights: '© 2025 洞悉美 (Insight Beauty). 保留所有权利。',
     },
   },
 };
 
+/* ─── HOOKS ─── */
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+  const [vis, setVis] = useState(false);
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold });
-    if (ref.current) obs.observe(ref.current);
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(true); obs.disconnect(); } }, { threshold });
+    obs.observe(el);
     return () => obs.disconnect();
   }, [threshold]);
-  return [ref, visible];
+  return [ref, vis];
 }
 
-function LangToggle({ lang, setLang }) {
-  return (
-    <button
-      onClick={() => setLang(l => l === 'en' ? 'zh' : 'en')}
-      style={{
-        background: 'none',
-        border: '1px solid rgba(201,168,76,0.45)',
-        cursor: 'pointer', borderRadius: 2,
-        padding: '6px 14px',
-        display: 'flex', alignItems: 'center', gap: 6,
-        color: '#c9a84c',
-        fontFamily: 'Barlow Condensed, sans-serif',
-        fontWeight: 700, fontSize: '0.72rem',
-        letterSpacing: '0.12em', textTransform: 'uppercase',
-        transition: 'all 0.2s', whiteSpace: 'nowrap',
-      }}
-      onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.12)'; }}
-      onMouseLeave={e => { e.currentTarget.style.background = 'none'; }}
-    >
-      <span style={{ fontSize: '0.88rem' }}>🌐</span>
-      {lang === 'en' ? '中文' : 'EN'}
-    </button>
-  );
-}
-
+/* ─── LOGO ─── */
 function LogoMark() {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-      <rect x="2" y="2" width="14" height="14" fill="none" stroke="#c9a84c" strokeWidth="1.5"/>
-      <rect x="20" y="2" width="14" height="14" fill="rgba(201,168,76,0.15)" stroke="#c9a84c" strokeWidth="1.5"/>
-      <rect x="2" y="20" width="14" height="14" fill="rgba(201,168,76,0.15)" stroke="#c9a84c" strokeWidth="1.5"/>
-      <rect x="20" y="20" width="14" height="14" fill="none" stroke="#c9a84c" strokeWidth="1.5"/>
-      <circle cx="18" cy="18" r="2.5" fill="#c9a84c"/>
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="32" height="32" rx="4" stroke="#2563eb" strokeWidth="1.5" fill="none"/>
+      <path d="M10 18 L18 10 L26 18 L18 26 Z" stroke="#2563eb" strokeWidth="1.2" fill="rgba(37,99,235,0.08)"/>
+      <circle cx="18" cy="18" r="3" fill="#2563eb" opacity="0.7"/>
     </svg>
   );
 }
 
+/* ─── NAV ─── */
 function Nav({ C, lang, setLang }) {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', h);
+    window.addEventListener('scroll', h, { passive: true });
     return () => window.removeEventListener('scroll', h);
   }, []);
-  const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); setOpen(false); };
+
+  const ids = ['products', 'capabilities', 'projects', 'whyus', 'contact'];
 
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-      background: scrolled ? 'rgba(8,12,20,0.95)' : 'transparent',
+      background: scrolled ? 'rgba(255,255,255,0.92)' : 'transparent',
       backdropFilter: scrolled ? 'blur(12px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(201,168,76,0.12)' : 'none',
-      transition: 'all 0.4s ease', padding: '0 40px',
+      borderBottom: scrolled ? '1px solid rgba(37,99,235,0.1)' : '1px solid transparent',
+      transition: 'all 0.35s',
     }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <LogoMark />
           <div>
-            <div style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, fontSize: '1.1rem', letterSpacing: '0.04em', color: '#e2c97e', lineHeight: 1.1 }}>{C.company}</div>
-            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.6rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.6)' }}>{C.tagline}</div>
+            <div style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, fontSize: '1.1rem', color: scrolled ? '#1a1a2e' : '#1a1a2e', lineHeight: 1.1 }}>{C.company}</div>
+            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: scrolled ? '#6b7280' : '#6b7280' }}>{C.tagline}</div>
           </div>
         </div>
-
-        <div style={{ display: 'flex', gap: 22, alignItems: 'center' }} className="desktop-nav">
-          {['products','capabilities','projects','whyus','contact'].map((id, i) => (
-            <button key={id} onClick={() => scrollTo(id)} style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600,
-              fontSize: '0.78rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-              color: 'rgba(221,228,239,0.7)', transition: 'color 0.2s',
+        <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+          {C.nav.map((n, i) => (
+            <a key={n} href={`#${ids[i]}`} style={{
+              textDecoration: 'none', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 500,
+              fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: scrolled ? '#1a1a2e' : '#1a1a2e', opacity: 0.75,
+              transition: 'opacity 0.2s',
             }}
-              onMouseEnter={e => e.target.style.color = '#c9a84c'}
-              onMouseLeave={e => e.target.style.color = 'rgba(221,228,239,0.7)'}
-            >{C.nav[i]}</button>
+              onMouseEnter={e => e.target.style.opacity = '1'}
+              onMouseLeave={e => e.target.style.opacity = '0.75'}
+            >{n}</a>
           ))}
-          <LangToggle lang={lang} setLang={setLang} />
-          <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noreferrer" style={{
-            background: 'linear-gradient(135deg,#c9a84c,#e2c97e)', color: '#080c14',
-            padding: '9px 22px', borderRadius: 2, fontFamily: 'Barlow Condensed, sans-serif',
-            fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-            textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 4px 20px rgba(201,168,76,0.3)',
-          }}>WhatsApp</a>
-        </div>
-
-        <div style={{ display: 'none', alignItems: 'center', gap: 12 }} className="mobile-controls">
-          <LangToggle lang={lang} setLang={setLang} />
-          <button onClick={() => setOpen(!open)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#c9a84c', fontSize: '1.4rem' }}>{open ? '✕' : '☰'}</button>
+          <button onClick={() => setLang(lang === 'en' ? 'zh' : 'en')} style={{
+            background: 'none', border: '1px solid rgba(37,99,235,0.3)', color: '#2563eb',
+            padding: '6px 14px', borderRadius: 2, cursor: 'pointer',
+            fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600,
+            fontSize: '0.72rem', letterSpacing: '0.1em',
+          }}>{lang === 'en' ? '中文' : 'EN'}</button>
         </div>
       </div>
-
-      {open && (
-        <div style={{ background: 'rgba(8,12,20,0.98)', backdropFilter: 'blur(12px)', padding: '24px 40px 32px', borderBottom: '1px solid rgba(201,168,76,0.15)' }}>
-          {['products','capabilities','projects','whyus','contact'].map((id, i) => (
-            <button key={id} onClick={() => scrollTo(id)} style={{
-              display: 'block', width: '100%', textAlign: 'left',
-              background: 'none', border: 'none', cursor: 'pointer',
-              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600,
-              fontSize: '1rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-              color: 'rgba(221,228,239,0.8)', padding: '12px 0',
-              borderBottom: '1px solid rgba(201,168,76,0.08)',
-            }}>{C.nav[i]}</button>
-          ))}
-        </div>
-      )}
-      <style>{`
-        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
-        @media(max-width:768px){ .desktop-nav{display:none!important} .mobile-controls{display:flex!important} }
-      `}</style>
     </nav>
   );
 }
 
+/* ─── HERO ─── */
 function Hero({ C }) {
   return (
-    <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-      <div style={{
-        position: 'absolute', inset: 0,
-        backgroundImage: 'url(https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80)',
-        backgroundSize: 'cover', backgroundPosition: 'center',
-        filter: 'brightness(0.22)',
-      }}/>
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(201,168,76,0.08) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }}/>
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.06) 0%, transparent 60%)' }}/>
-
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1, paddingTop: 120 }}>
-        <div style={{ maxWidth: 760 }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24, animation: 'fadeUp 0.7s 0.1s both' }}>
-            <span style={{ display: 'inline-block', width: 40, height: 1, background: '#c9a84c', marginRight: 14 }}/>
-            <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c' }}>{C.hero.eyebrow}</span>
+    <section style={{
+      minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center',
+      position: 'relative', overflow: 'hidden', background: '#ffffff',
+    }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.92) saturate(0.8)', opacity: 0.08 }}/>
+      <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '160px 40px 180px' }}>
+        <div style={{ maxWidth: 680 }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24, animation: 'fadeUp 0.7s both' }}>
+            <span style={{ display: 'inline-block', width: 40, height: 1, background: '#2563eb', marginRight: 14 }}/>
+            <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#2563eb' }}>{C.hero.eyebrow}</span>
           </div>
-          <h1 style={{ fontSize: 'clamp(3.2rem, 7vw, 6.5rem)', fontWeight: 700, lineHeight: 1.0, marginBottom: 32, animation: 'fadeUp 0.7s 0.25s both' }}>
+          <h1 style={{ fontSize: 'clamp(2.8rem, 6vw, 4.8rem)', lineHeight: 1.05, marginBottom: 28, animation: 'fadeUp 0.7s 0.15s both', color: '#1a1a2e' }}>
             {C.hero.headline[0]}<br/>
-            <span style={{ color: '#c9a84c', fontStyle: 'italic' }}>{C.hero.headline[1]}</span>
+            <span style={{ color: '#2563eb', fontStyle: 'italic' }}>{C.hero.headline[1]}</span>
           </h1>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(221,228,239,0.7)', maxWidth: 540, marginBottom: 48, lineHeight: 1.8, animation: 'fadeUp 0.7s 0.4s both' }}>{C.hero.sub}</p>
+          <p style={{ fontSize: '1.05rem', color: '#4b5563', maxWidth: 540, marginBottom: 48, lineHeight: 1.8, animation: 'fadeUp 0.7s 0.4s both' }}>{C.hero.sub}</p>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', animation: 'fadeUp 0.7s 0.55s both' }}>
             <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noreferrer" style={{
-              background: 'linear-gradient(135deg,#c9a84c,#e2c97e)', color: '#080c14',
+              background: '#2563eb', color: '#ffffff',
               padding: '14px 36px', borderRadius: 2, textDecoration: 'none',
               fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
               fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-              boxShadow: '0 8px 32px rgba(201,168,76,0.35)',
+              boxShadow: '0 8px 32px rgba(37,99,235,0.25)',
             }}>{C.hero.cta1}</a>
             <button onClick={() => document.getElementById('capabilities')?.scrollIntoView({ behavior: 'smooth' })} style={{
-              background: 'none', border: '1px solid rgba(201,168,76,0.4)', color: '#e2c97e',
+              background: 'none', border: '1px solid rgba(37,99,235,0.4)', color: '#2563eb',
               padding: '14px 36px', borderRadius: 2, cursor: 'pointer',
               fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600,
               fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase',
@@ -482,12 +434,12 @@ function Hero({ C }) {
         </div>
       </div>
 
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, borderTop: '1px solid rgba(201,168,76,0.12)', background: 'rgba(13,19,34,0.8)', backdropFilter: 'blur(8px)' }}>
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, borderTop: '1px solid rgba(37,99,235,0.1)', background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(8px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
           {C.stats.map((s, i) => (
-            <div key={i} style={{ padding: '28px 0', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(201,168,76,0.1)' : 'none' }}>
-              <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.2rem', fontWeight: 700, color: '#e2c97e', lineHeight: 1 }}>{s.n}</div>
-              <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(168,180,196,0.7)', marginTop: 6 }}>{s.label}</div>
+            <div key={i} style={{ padding: '28px 0', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(37,99,235,0.08)' : 'none' }}>
+              <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.2rem', fontWeight: 700, color: '#2563eb', lineHeight: 1 }}>{s.n}</div>
+              <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#6b7280', marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -496,6 +448,7 @@ function Hero({ C }) {
   );
 }
 
+/* ─── PRODUCTS ─── */
 function Products({ C }) {
   const [ref, vis] = useInView();
   const [active, setActive] = useState(0);
@@ -503,24 +456,24 @@ function Products({ C }) {
   const sec = C.productsSection;
 
   return (
-    <section id="products" style={{ padding: '100px 0', background: 'linear-gradient(180deg, #080c14 0%, #0d1322 100%)' }}>
+    <section id="products" style={{ padding: '100px 0', background: '#f8f9fa' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }} ref={ref}>
         <div style={{ marginBottom: 64 }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-            <span style={{ display: 'inline-block', width: 40, height: 1, background: '#c9a84c', marginRight: 14 }}/>
-            <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c' }}>{sec.eyebrow}</span>
+            <span style={{ display: 'inline-block', width: 40, height: 1, background: '#2563eb', marginRight: 14 }}/>
+            <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#2563eb' }}>{sec.eyebrow}</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)', transition: 'all 0.7s' }}>{sec.headline}</h2>
+          <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: '#1a1a2e', opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)', transition: 'all 0.7s' }}>{sec.headline}</h2>
         </div>
 
-        <div style={{ display: 'flex', gap: 0, borderBottom: '1px solid rgba(201,168,76,0.15)', marginBottom: 48, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 0, borderBottom: '1px solid rgba(37,99,235,0.12)', marginBottom: 48, flexWrap: 'wrap' }}>
           {C.products.map((prod, i) => (
             <button key={prod.id} onClick={() => setActive(i)} style={{
               background: 'none', border: 'none', cursor: 'pointer', padding: '14px 32px',
               fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600,
               fontSize: '0.8rem', letterSpacing: '0.12em', textTransform: 'uppercase',
-              color: active === i ? '#c9a84c' : 'rgba(168,180,196,0.6)',
-              borderBottom: active === i ? '2px solid #c9a84c' : '2px solid transparent',
+              color: active === i ? '#2563eb' : '#6b7280',
+              borderBottom: active === i ? '2px solid #2563eb' : '2px solid transparent',
               marginBottom: -1, transition: 'all 0.2s',
             }}>{prod.short}</button>
           ))}
@@ -528,40 +481,38 @@ function Products({ C }) {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="product-grid">
           <div>
-            <h3 style={{ fontSize: '2.2rem', marginBottom: 20, color: '#e2c97e' }}>{p.name}</h3>
-            <p style={{ color: 'rgba(221,228,239,0.75)', lineHeight: 1.9, marginBottom: 28, fontSize: '0.95rem' }}>{p.desc}</p>
+            <h3 style={{ fontSize: '2.2rem', marginBottom: 20, color: '#1a1a2e' }}>{p.name}</h3>
+            <p style={{ color: '#4b5563', lineHeight: 1.9, marginBottom: 28, fontSize: '0.95rem' }}>{p.desc}</p>
 
-            {/* Product Image */}
-            <div style={{ width: '100%', height: 230, borderRadius: 4, overflow: 'hidden', border: '1px solid rgba(201,168,76,0.15)', marginBottom: 28, position: 'relative' }}>
+            <div style={{ width: '100%', height: 230, borderRadius: 4, overflow: 'hidden', border: '1px solid rgba(37,99,235,0.1)', marginBottom: 28, position: 'relative' }}>
               <img
                 src={p.image} alt={p.name} loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.6s' }}
                 onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
                 onMouseLeave={e => e.target.style.transform = 'scale(1)'}
               />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8,12,20,0.45) 0%, transparent 60%)', pointerEvents: 'none' }}/>
             </div>
 
             <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}?text=Hi, I'm interested in ${encodeURIComponent(p.name)}`}
               target="_blank" rel="noreferrer" style={{
                 display: 'inline-block',
-                background: 'linear-gradient(135deg,#c9a84c,#e2c97e)', color: '#080c14',
+                background: '#2563eb', color: '#ffffff',
                 padding: '12px 28px', borderRadius: 2, textDecoration: 'none',
                 fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
                 fontSize: '0.78rem', letterSpacing: '0.14em', textTransform: 'uppercase',
               }}>{sec.enquireBtn}</a>
           </div>
 
-          <div style={{ background: 'rgba(17,24,39,0.8)', border: '1px solid rgba(201,168,76,0.15)', padding: 36, borderRadius: 4 }}>
-            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.68rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#c9a84c', marginBottom: 24 }}>{sec.specsLabel}</div>
+          <div style={{ background: '#ffffff', border: '1px solid rgba(37,99,235,0.1)', padding: 36, borderRadius: 4, boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.68rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2563eb', marginBottom: 24 }}>{sec.specsLabel}</div>
             {p.specs.map((s, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '10px 0', borderBottom: i < p.specs.length - 1 ? '1px solid rgba(201,168,76,0.08)' : 'none' }}>
-                <span style={{ color: '#c9a84c', fontSize: '0.5rem', marginTop: 6, flexShrink: 0 }}>◆</span>
-                <span style={{ fontSize: '0.88rem', color: 'rgba(221,228,239,0.8)', lineHeight: 1.5 }}>{s}</span>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '10px 0', borderBottom: i < p.specs.length - 1 ? '1px solid rgba(37,99,235,0.06)' : 'none' }}>
+                <span style={{ color: '#2563eb', fontSize: '0.5rem', marginTop: 6, flexShrink: 0 }}>◆</span>
+                <span style={{ fontSize: '0.88rem', color: '#374151', lineHeight: 1.5 }}>{s}</span>
               </div>
             ))}
-            <div style={{ marginTop: 24, padding: '14px 18px', background: 'rgba(201,168,76,0.05)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: 2 }}>
-              <div style={{ fontSize: '0.78rem', color: 'rgba(201,168,76,0.8)', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{sec.customNote}</div>
+            <div style={{ marginTop: 24, padding: '14px 18px', background: 'rgba(37,99,235,0.04)', border: '1px solid rgba(37,99,235,0.1)', borderRadius: 2 }}>
+              <div style={{ fontSize: '0.78rem', color: '#2563eb', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.8 }}>{sec.customNote}</div>
             </div>
           </div>
         </div>
@@ -571,33 +522,34 @@ function Products({ C }) {
   );
 }
 
+/* ─── CAPABILITIES ─── */
 function Capabilities({ C }) {
   const [ref, vis] = useInView();
   const sec = C.capsSection;
   return (
-    <section id="capabilities" style={{ padding: '100px 0', background: '#0d1322', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1400&q=60)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.07)' }}/>
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(201,168,76,0.05) 1px, transparent 1px)', backgroundSize: '20px 20px' }}/>
+    <section id="capabilities" style={{ padding: '100px 0', background: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1400&q=60)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(1.1) saturate(0.3)', opacity: 0.04 }}/>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(37,99,235,0.04) 1px, transparent 1px)', backgroundSize: '20px 20px' }}/>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', position: 'relative' }} ref={ref}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 64, flexWrap: 'wrap', gap: 24 }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-              <span style={{ display: 'inline-block', width: 40, height: 1, background: '#c9a84c', marginRight: 14 }}/>
-              <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c' }}>{sec.eyebrow}</span>
+              <span style={{ display: 'inline-block', width: 40, height: 1, background: '#2563eb', marginRight: 14 }}/>
+              <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#2563eb' }}>{sec.eyebrow}</span>
             </div>
-            <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)' }}>{sec.headlineA}<br/><span style={{ color: '#c9a84c', fontStyle: 'italic' }}>{sec.headlineB}</span></h2>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: '#1a1a2e' }}>{sec.headlineA}<br/><span style={{ color: '#2563eb', fontStyle: 'italic' }}>{sec.headlineB}</span></h2>
           </div>
-          <p style={{ maxWidth: 360, color: 'rgba(221,228,239,0.6)', fontSize: '0.95rem', lineHeight: 1.8 }}>{sec.sub}</p>
+          <p style={{ maxWidth: 360, color: '#4b5563', fontSize: '0.95rem', lineHeight: 1.8 }}>{sec.sub}</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 1, background: 'rgba(201,168,76,0.08)' }} className="caps-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 1, background: 'rgba(37,99,235,0.06)' }} className="caps-grid">
           {C.capabilities.map((cap, i) => (
-            <div key={i} style={{ background: '#0d1322', padding: '40px 32px', opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(24px)', transition: `all 0.6s ${i * 0.12}s` }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(201,168,76,0.05)'}
-              onMouseLeave={e => e.currentTarget.style.background = '#0d1322'}
+            <div key={i} style={{ background: '#ffffff', padding: '40px 32px', opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(24px)', transition: `all 0.6s ${i * 0.12}s` }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(37,99,235,0.03)'}
+              onMouseLeave={e => e.currentTarget.style.background = '#ffffff'}
             >
-              <div style={{ fontSize: '1.8rem', color: '#c9a84c', marginBottom: 20 }}>{cap.icon}</div>
-              <h4 style={{ fontSize: '1.1rem', marginBottom: 14, color: '#e2c97e' }}>{cap.title}</h4>
-              <p style={{ fontSize: '0.88rem', color: 'rgba(168,180,196,0.75)', lineHeight: 1.8 }}>{cap.body}</p>
+              <div style={{ fontSize: '1.8rem', color: '#2563eb', marginBottom: 20 }}>{cap.icon}</div>
+              <h4 style={{ fontSize: '1.1rem', marginBottom: 14, color: '#1a1a2e' }}>{cap.title}</h4>
+              <p style={{ fontSize: '0.88rem', color: '#6b7280', lineHeight: 1.8 }}>{cap.body}</p>
             </div>
           ))}
         </div>
@@ -607,6 +559,7 @@ function Capabilities({ C }) {
   );
 }
 
+/* ─── PROJECTS ─── */
 function Projects({ C }) {
   const [ref, vis] = useInView();
   const sec = C.projectsSection;
@@ -620,14 +573,14 @@ function Projects({ C }) {
   ];
 
   return (
-    <section id="projects" style={{ padding: '100px 0', background: '#080c14' }}>
+    <section id="projects" style={{ padding: '100px 0', background: '#f8f9fa' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }} ref={ref}>
         <div style={{ marginBottom: 64 }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-            <span style={{ display: 'inline-block', width: 40, height: 1, background: '#c9a84c', marginRight: 14 }}/>
-            <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c' }}>{sec.eyebrow}</span>
+            <span style={{ display: 'inline-block', width: 40, height: 1, background: '#2563eb', marginRight: 14 }}/>
+            <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#2563eb' }}>{sec.eyebrow}</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)' }}>{sec.headlineA}<br/><span style={{ color: '#c9a84c', fontStyle: 'italic' }}>{sec.headlineB}</span></h2>
+          <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: '#1a1a2e' }}>{sec.headlineA}<br/><span style={{ color: '#2563eb', fontStyle: 'italic' }}>{sec.headlineB}</span></h2>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }} className="proj-grid">
@@ -646,26 +599,26 @@ function Projects({ C }) {
                 e.currentTarget.querySelector('.pov').style.opacity = '0.7';
               }}
             >
-              <div style={{ height: 230, overflow: 'hidden', background: '#0d1322' }}>
+              <div style={{ height: 230, overflow: 'hidden', background: '#e5e7eb' }}>
                 <img className="pimg" src={projImages[i]} alt={proj.name} loading="lazy"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s', filter: 'brightness(0.5)' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s', filter: 'brightness(0.7)' }}
                 />
               </div>
-              <div className="pov" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(4,7,14,0.97) 35%, rgba(4,7,14,0.15) 100%)', opacity: 0.7, transition: 'opacity 0.3s' }}/>
+              <div className="pov" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,26,46,0.92) 35%, rgba(26,26,46,0.1) 100%)', opacity: 0.7, transition: 'opacity 0.3s' }}/>
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '20px 24px' }}>
-                <div style={{ fontSize: '0.6rem', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.7)', marginBottom: 6 }}>Project {String(i+1).padStart(2,'0')}</div>
-                <h4 style={{ fontSize: '1.05rem', color: '#dde4ef', marginBottom: 4, fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}>{proj.name}</h4>
-                <div style={{ fontSize: '0.78rem', color: 'rgba(168,180,196,0.6)', marginBottom: 10 }}>{proj.location}</div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(201,168,76,0.2)', paddingTop: 10 }}>
-                  <span style={{ fontSize: '0.75rem', color: '#c9a84c', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.08em' }}>{proj.type}</span>
-                  <span style={{ fontSize: '0.75rem', color: 'rgba(168,180,196,0.6)' }}>{proj.sqm}</span>
+                <div style={{ fontSize: '0.6rem', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(37,99,235,0.8)', marginBottom: 6 }}>Project {String(i+1).padStart(2,'0')}</div>
+                <h4 style={{ fontSize: '1.05rem', color: '#ffffff', marginBottom: 4, fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}>{proj.name}</h4>
+                <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.7)', marginBottom: 10 }}>{proj.location}</div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.2)', paddingTop: 10 }}>
+                  <span style={{ fontSize: '0.75rem', color: '#93c5fd', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.08em' }}>{proj.type}</span>
+                  <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)' }}>{proj.sqm}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <p style={{ textAlign: 'center', marginTop: 40, color: 'rgba(168,180,196,0.5)', fontSize: '0.85rem' }}>
-          {sec.requestNote} <a href={`mailto:${C.email}`} style={{ color: '#c9a84c', textDecoration: 'none' }}>{C.email}</a>
+        <p style={{ textAlign: 'center', marginTop: 40, color: '#6b7280', fontSize: '0.85rem' }}>
+          {sec.requestNote} <a href={`mailto:${C.email}`} style={{ color: '#2563eb', textDecoration: 'none' }}>{C.email}</a>
         </p>
       </div>
       <style>{`@media(max-width:900px){.proj-grid{grid-template-columns:1fr 1fr!important}} @media(max-width:500px){.proj-grid{grid-template-columns:1fr!important}}`}</style>
@@ -673,36 +626,38 @@ function Projects({ C }) {
   );
 }
 
+/* ─── WHY US ─── */
 function WhyUs({ C }) {
   const [ref, vis] = useInView();
   const sec = C.whySection;
   return (
-    <section id="whyus" style={{ padding: '100px 0', background: 'linear-gradient(180deg,#0d1322 0%,#080c14 100%)', position: 'relative' }}>
+    <section id="whyus" style={{ padding: '100px 0', background: '#ffffff', position: 'relative' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }} ref={ref}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }} className="why-grid">
           <div>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-              <span style={{ display: 'inline-block', width: 40, height: 1, background: '#c9a84c', marginRight: 14 }}/>
-              <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c' }}>{sec.eyebrow}</span>
+              <span style={{ display: 'inline-block', width: 40, height: 1, background: '#2563eb', marginRight: 14 }}/>
+              <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#2563eb' }}>{sec.eyebrow}</span>
             </div>
-            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', marginBottom: 28 }}>
-              {sec.headline[0]}<br/><span style={{ color: '#c9a84c', fontStyle: 'italic' }}>{sec.headline[1]}</span><br/>{sec.headline[2]}
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', marginBottom: 28, color: '#1a1a2e' }}>
+              {sec.headline[0]}<br/><span style={{ color: '#2563eb', fontStyle: 'italic' }}>{sec.headline[1]}</span><br/>{sec.headline[2]}
             </h2>
-            <p style={{ color: 'rgba(221,228,239,0.65)', lineHeight: 1.9, marginBottom: 36, fontSize: '0.95rem' }}>{sec.body}</p>
+            <p style={{ color: '#4b5563', lineHeight: 1.9, marginBottom: 36, fontSize: '0.95rem' }}>{sec.body}</p>
             <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noreferrer" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 10,
-              color: '#c9a84c', fontFamily: 'Barlow Condensed, sans-serif',
-              fontWeight: 600, fontSize: '0.8rem', letterSpacing: '0.14em', textTransform: 'uppercase', textDecoration: 'none',
-            }}>
-              <span>{sec.cta}</span><span style={{ fontSize: '1rem' }}>→</span>
-            </a>
+              display: 'inline-block',
+              background: '#2563eb', color: '#ffffff',
+              padding: '14px 36px', borderRadius: 2, textDecoration: 'none',
+              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
+              fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase',
+              boxShadow: '0 8px 32px rgba(37,99,235,0.2)',
+            }}>{sec.cta}</a>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'rgba(201,168,76,0.1)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'rgba(37,99,235,0.08)' }}>
             {C.whyus.map((w, i) => (
-              <div key={i} style={{ background: '#0d1322', padding: '32px 28px', opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(16px)', transition: `all 0.5s ${0.2 + i * 0.1}s` }}>
-                <div style={{ width: 32, height: 32, border: '1px solid rgba(201,168,76,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18, color: '#c9a84c', fontSize: '0.7rem' }}>0{i+1}</div>
-                <h4 style={{ fontSize: '1rem', color: '#e2c97e', marginBottom: 10, fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}>{w.title}</h4>
-                <p style={{ fontSize: '0.84rem', color: 'rgba(168,180,196,0.7)', lineHeight: 1.75 }}>{w.body}</p>
+              <div key={i} style={{ background: '#ffffff', padding: '32px 28px', opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(16px)', transition: `all 0.5s ${0.2 + i * 0.1}s` }}>
+                <div style={{ width: 32, height: 32, border: '1px solid rgba(37,99,235,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18, color: '#2563eb', fontSize: '0.7rem' }}>0{i+1}</div>
+                <h4 style={{ fontSize: '1rem', color: '#1a1a2e', marginBottom: 10, fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}>{w.title}</h4>
+                <p style={{ fontSize: '0.84rem', color: '#6b7280', lineHeight: 1.75 }}>{w.body}</p>
               </div>
             ))}
           </div>
@@ -713,6 +668,7 @@ function WhyUs({ C }) {
   );
 }
 
+/* ─── CONTACT ─── */
 function Contact({ C }) {
   const [form, setForm] = useState({ name: '', company: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
@@ -728,85 +684,87 @@ function Contact({ C }) {
   };
 
   const inp = {
-    width: '100%', background: 'rgba(17,24,39,0.8)', border: '1px solid rgba(201,168,76,0.18)',
-    color: '#dde4ef', padding: '14px 18px', borderRadius: 2, fontSize: '0.92rem',
+    width: '100%', background: '#f8f9fa', border: '1px solid rgba(37,99,235,0.15)',
+    color: '#1a1a2e', padding: '14px 18px', borderRadius: 2, fontSize: '0.92rem',
     fontFamily: 'Barlow, sans-serif', outline: 'none', boxSizing: 'border-box',
   };
 
   return (
-    <section id="contact" style={{ padding: '100px 0', background: '#080c14', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(201,168,76,0.05) 1px, transparent 1px)', backgroundSize: '24px 24px' }}/>
+    <section id="contact" style={{ padding: '100px 0', background: '#f8f9fa', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, rgba(37,99,235,0.03) 1px, transparent 1px)', backgroundSize: '24px 24px' }}/>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', position: 'relative' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80 }} className="contact-grid">
           <div>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-              <span style={{ display: 'inline-block', width: 40, height: 1, background: '#c9a84c', marginRight: 14 }}/>
-              <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c' }}>{ct.getInTouch}</span>
+              <span style={{ display: 'inline-block', width: 40, height: 1, background: '#2563eb', marginRight: 14 }}/>
+              <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#2563eb' }}>{ct.getInTouch}</span>
             </div>
-            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', marginBottom: 20 }}>{ct.headline}</h2>
-            <p style={{ color: 'rgba(221,228,239,0.6)', lineHeight: 1.9, marginBottom: 48, fontSize: '0.95rem' }}>{ct.sub}</p>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3.2rem)', marginBottom: 20, color: '#1a1a2e' }}>{ct.headline}</h2>
+            <p style={{ color: '#4b5563', lineHeight: 1.9, marginBottom: 48, fontSize: '0.95rem' }}>{ct.sub}</p>
             {[
               { label: 'WhatsApp', value: C.whatsapp, href: `https://wa.me/${C.whatsapp.replace(/\D/g,'')}`, icon: '💬' },
               { label: 'Email', value: C.email, href: `mailto:${C.email}`, icon: '✉' },
               { label: 'Website', value: C.website, href: `https://${C.website}`, icon: '🌐' },
             ].map(m => (
-              <a key={m.label} href={m.href} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 18, padding: '18px 0', borderBottom: '1px solid rgba(201,168,76,0.1)', textDecoration: 'none' }}>
-                <div style={{ width: 42, height: 42, border: '1px solid rgba(201,168,76,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', flexShrink: 0, borderRadius: 2 }}>{m.icon}</div>
+              <a key={m.label} href={m.href} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 18, padding: '18px 0', borderBottom: '1px solid rgba(37,99,235,0.08)', textDecoration: 'none' }}>
+                <div style={{ width: 42, height: 42, border: '1px solid rgba(37,99,235,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', flexShrink: 0, borderRadius: 2 }}>{m.icon}</div>
                 <div>
-                  <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.6)', marginBottom: 3 }}>{m.label}</div>
-                  <div style={{ color: '#e2c97e', fontSize: '0.92rem' }}>{m.value}</div>
+                  <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#6b7280', marginBottom: 3 }}>{m.label}</div>
+                  <div style={{ color: '#2563eb', fontSize: '0.92rem' }}>{m.value}</div>
                 </div>
               </a>
             ))}
           </div>
-          <div style={{ background: 'rgba(13,19,34,0.9)', border: '1px solid rgba(201,168,76,0.15)', padding: 40, borderRadius: 4 }}>
-            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c9a84c', marginBottom: 28 }}>{ct.sendLabel}</div>
+          <div style={{ background: '#ffffff', border: '1px solid rgba(37,99,235,0.1)', padding: 40, borderRadius: 4, boxShadow: '0 4px 24px rgba(0,0,0,0.04)' }}>
+            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 600, fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#2563eb', marginBottom: 28 }}>{ct.sendLabel}</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-              <input style={inp} placeholder={ct.namePh} value={form.name} onChange={e => setForm(p => ({...p, name: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(201,168,76,0.5)'} onBlur={e => e.target.style.borderColor='rgba(201,168,76,0.18)'}/>
-              <input style={inp} placeholder={ct.companyPh} value={form.company} onChange={e => setForm(p => ({...p, company: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(201,168,76,0.5)'} onBlur={e => e.target.style.borderColor='rgba(201,168,76,0.18)'}/>
+              <input style={inp} placeholder={ct.namePh} value={form.name} onChange={e => setForm(p => ({...p, name: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(37,99,235,0.5)'} onBlur={e => e.target.style.borderColor='rgba(37,99,235,0.15)'}/>
+              <input style={inp} placeholder={ct.companyPh} value={form.company} onChange={e => setForm(p => ({...p, company: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(37,99,235,0.5)'} onBlur={e => e.target.style.borderColor='rgba(37,99,235,0.15)'}/>
             </div>
-            <input style={{...inp, marginBottom: 16}} placeholder={ct.emailPh} value={form.email} onChange={e => setForm(p => ({...p, email: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(201,168,76,0.5)'} onBlur={e => e.target.style.borderColor='rgba(201,168,76,0.18)'}/>
-            <textarea style={{...inp, minHeight: 120, resize: 'vertical', marginBottom: 20}} placeholder={ct.msgPh} value={form.message} onChange={e => setForm(p => ({...p, message: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(201,168,76,0.5)'} onBlur={e => e.target.style.borderColor='rgba(201,168,76,0.18)'}/>
+            <input style={{...inp, marginBottom: 16}} placeholder={ct.emailPh} value={form.email} onChange={e => setForm(p => ({...p, email: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(37,99,235,0.5)'} onBlur={e => e.target.style.borderColor='rgba(37,99,235,0.15)'}/>
+            <textarea style={{...inp, minHeight: 120, resize: 'vertical', marginBottom: 20}} placeholder={ct.msgPh} value={form.message} onChange={e => setForm(p => ({...p, message: e.target.value}))} onFocus={e => e.target.style.borderColor='rgba(37,99,235,0.5)'} onBlur={e => e.target.style.borderColor='rgba(37,99,235,0.15)'}/>
             <button onClick={handleSubmit} style={{
-              width: '100%', background: sent ? 'rgba(201,168,76,0.15)' : 'linear-gradient(135deg,#c9a84c,#e2c97e)',
-              color: sent ? '#c9a84c' : '#080c14', border: sent ? '1px solid #c9a84c' : 'none',
+              width: '100%', background: sent ? 'rgba(37,99,235,0.1)' : '#2563eb',
+              color: sent ? '#2563eb' : '#ffffff', border: sent ? '1px solid #2563eb' : 'none',
               padding: '15px 0', borderRadius: 2, cursor: 'pointer',
               fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
               fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase', transition: 'all 0.3s',
             }}>{sent ? ct.sentBtn : ct.sendBtn}</button>
-            <p style={{ marginTop: 14, fontSize: '0.78rem', color: 'rgba(168,180,196,0.45)', textAlign: 'center', lineHeight: 1.5 }}>{ct.orWhatsapp}</p>
+            <p style={{ marginTop: 14, fontSize: '0.78rem', color: '#6b7280', textAlign: 'center', lineHeight: 1.5 }}>{ct.orWhatsapp}</p>
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:900px){.contact-grid{grid-template-columns:1fr!important}}`}</style>
+      <style>{`@media(max-width:768px){.contact-grid{grid-template-columns:1fr!important}}`}</style>
     </section>
   );
 }
 
+/* ─── FOOTER ─── */
 function Footer({ C }) {
   return (
-    <footer style={{ background: '#04070e', borderTop: '1px solid rgba(201,168,76,0.12)', padding: '40px 0' }}>
+    <footer style={{ background: '#ffffff', borderTop: '1px solid rgba(37,99,235,0.1)', padding: '40px 0' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 20 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <LogoMark />
           <div>
-            <div style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, fontSize: '1rem', color: '#e2c97e' }}>{C.company}</div>
-            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.5)' }}>{C.tagline}</div>
+            <div style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, fontSize: '1rem', color: '#1a1a2e' }}>{C.company}</div>
+            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#6b7280' }}>{C.tagline}</div>
           </div>
         </div>
-        <div style={{ fontSize: '0.8rem', color: 'rgba(107,122,148,0.7)', textAlign: 'center', lineHeight: 1.8 }}>
+        <div style={{ fontSize: '0.8rem', color: '#9ca3af', textAlign: 'center', lineHeight: 1.8 }}>
           <div>{C.website}</div>
           <div>{C.footer.rights}</div>
         </div>
         <div style={{ display: 'flex', gap: 16 }}>
-          <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noreferrer" style={{ color: 'rgba(201,168,76,0.7)', fontSize: '0.78rem', textDecoration: 'none', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em', textTransform: 'uppercase' }}>WhatsApp</a>
-          <a href={`mailto:${C.email}`} style={{ color: 'rgba(201,168,76,0.7)', fontSize: '0.78rem', textDecoration: 'none', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Email</a>
+          <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noreferrer" style={{ color: '#2563eb', fontSize: '0.78rem', textDecoration: 'none', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em', textTransform: 'uppercase' }}>WhatsApp</a>
+          <a href={`mailto:${C.email}`} style={{ color: '#2563eb', fontSize: '0.78rem', textDecoration: 'none', fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Email</a>
         </div>
       </div>
     </footer>
   );
 }
 
+/* ─── APP ─── */
 export default function App() {
   const [lang, setLang] = useState('en');
   const C = CONTENT[lang];
