@@ -339,25 +339,28 @@ function useInView(threshold = 0.15) {
 
 /* ─── LOGO ─── */
 function LogoMark() {
-  const [isHovered, setIsHovered] = useState(false);
   return (
-    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{cursor:'pointer'}} onMouseEnter={()=>setIsHovered(true)} onMouseLeave={()=>setIsHovered(false)}>
-      <defs><style>{`@keyframes pulse-outer{0%,100%{r:19px;opacity:0.6;}50%{r:22px;opacity:0.1;}}@keyframes rotate-inner{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}@keyframes pulse-dot{0%,100%{opacity:0.85;}50%{opacity:0.3;}}.logo-pulse{animation:pulse-outer 3s ease-in-out infinite;}.logo-rotate{animation:rotate-inner 10s linear infinite;transform-origin:22px 22px;}.logo-dot{animation:pulse-dot 2s ease-in-out infinite;}`}</style></defs>
-      <circle cx="22" cy="22" r="20" stroke="#2563eb" strokeWidth="1.5" fill="none"/>
-      <circle cx="22" cy="22" className="logo-pulse" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.4"/>
-      <g className="logo-rotate">
-        <circle cx="14" cy="10" r="2" fill="#2563eb" className="logo-dot"/>
-        <circle cx="22" cy="8" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'0.2s'}}/>
-        <circle cx="30" cy="10" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'0.4s'}}/>
-        <circle cx="34" cy="18" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'0.6s'}}/>
-        <circle cx="34" cy="26" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'0.8s'}}/>
-        <circle cx="30" cy="34" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'1s'}}/>
-        <circle cx="22" cy="36" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'1.2s'}}/>
-        <circle cx="14" cy="34" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'1.4s'}}/>
-        <circle cx="10" cy="26" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'1.6s'}}/>
-        <circle cx="10" cy="18" r="2" fill="#2563eb" className="logo-dot" style={{animationDelay:'1.8s'}}/>
-      </g>
-      <circle cx="22" cy="22" r="5" stroke="#2563eb" strokeWidth="1.2" fill="none" opacity="0.5" style={{animation:'pulse-outer 3s ease-in-out infinite'}}/>
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{cursor:'pointer'}}>
+      <defs>
+        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#2563eb" stopOpacity="1" />
+          <stop offset="100%" stopColor="#1e40af" stopOpacity="1" />
+        </linearGradient>
+      </defs>
+      
+      <circle cx="22" cy="22" r="20" stroke="url(#logo-grad)" strokeWidth="1.8" fill="none"/>
+      
+      <circle cx="22" cy="6" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="32.4" cy="9.6" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="37.6" cy="19.2" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="35.2" cy="30.8" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="24.4" cy="38" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="11.6" cy="36" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="4.8" cy="26" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="6.4" cy="14.2" r="2.2" fill="url(#logo-grad)"/>
+      <circle cx="11.6" cy="7.2" r="2.2" fill="url(#logo-grad)"/>
+      
+      <circle cx="22" cy="22" r="4.5" stroke="url(#logo-grad)" strokeWidth="1.2" fill="none" opacity="0.7"/>
     </svg>
   );
 }
