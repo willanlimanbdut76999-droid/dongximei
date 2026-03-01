@@ -431,7 +431,12 @@ function Nav({ C, lang, setLang }) {
 }
 
 /* ─── HERO ─── */
-function Hero({ C }) {
+function Hero({ C, lang }) {
+  const ctaHref = lang === 'zh' 
+    ? `tel:${C.phone.replace(/\s/g, '')}` 
+    : `https://wa.me/${C.whatsapp.replace(/\D/g, '')}`;
+  const isPhone = lang === 'zh';
+
   return (
     <section style={{
       minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -450,13 +455,17 @@ function Hero({ C }) {
           </h1>
           <p style={{ fontSize: '1.05rem', color: '#4b5563', maxWidth: 540, marginBottom: 48, lineHeight: 1.8, animation: 'fadeUp 0.7s 0.4s both' }}>{C.hero.sub}</p>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', animation: 'fadeUp 0.7s 0.55s both' }}>
-            <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noreferrer" style={{
-              background: '#2563eb', color: '#ffffff',
-              padding: '14px 36px', borderRadius: 2, textDecoration: 'none',
-              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
-              fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-              boxShadow: '0 8px 32px rgba(37,99,235,0.25)',
-            }}>{C.hero.cta1}</a>
+            <a 
+              href={ctaHref} 
+              target={isPhone ? undefined : '_blank'} 
+              rel={isPhone ? undefined : 'noreferrer'} 
+              style={{
+                background: '#2563eb', color: '#ffffff',
+                padding: '14px 36px', borderRadius: 2, textDecoration: 'none',
+                fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
+                fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase',
+                boxShadow: '0 8px 32px rgba(37,99,235,0.25)',
+              }}>{C.hero.cta1}</a>
             <button onClick={() => document.getElementById('capabilities')?.scrollIntoView({ behavior: 'smooth' })} style={{
               background: 'none', border: '1px solid rgba(37,99,235,0.4)', color: '#2563eb',
               padding: '14px 36px', borderRadius: 2, cursor: 'pointer',
@@ -482,11 +491,16 @@ function Hero({ C }) {
 }
 
 /* ─── PRODUCTS ─── */
-function Products({ C }) {
+function Products({ C, lang }) {
   const [ref, vis] = useInView();
   const [active, setActive] = useState(0);
   const p = C.products[active];
   const sec = C.productsSection;
+  
+  const enquireHref = lang === 'zh'
+    ? `tel:${C.phone.replace(/\s/g, '')}`
+    : `https://wa.me/${C.whatsapp.replace(/\D/g,'')}?text=Hi, I'm interested in ${encodeURIComponent(p.name)}`;
+  const isPhone = lang === 'zh';
 
   return (
     <section id="products" style={{ padding: '100px 0', background: '#f8f9fa' }}>
@@ -526,8 +540,10 @@ function Products({ C }) {
               />
             </div>
 
-            <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}?text=Hi, I'm interested in ${encodeURIComponent(p.name)}`}
-              target="_blank" rel="noreferrer" style={{
+            <a href={enquireHref}
+              target={isPhone ? undefined : '_blank'} 
+              rel={isPhone ? undefined : 'noreferrer'} 
+              style={{
                 display: 'inline-block',
                 background: '#2563eb', color: '#ffffff',
                 padding: '12px 28px', borderRadius: 2, textDecoration: 'none',
@@ -660,9 +676,14 @@ function Projects({ C }) {
 }
 
 /* ─── WHY US ─── */
-function WhyUs({ C }) {
+function WhyUs({ C, lang }) {
   const [ref, vis] = useInView();
   const sec = C.whySection;
+  const ctaHref = lang === 'zh' 
+    ? `tel:${C.phone.replace(/\s/g, '')}` 
+    : `https://wa.me/${C.whatsapp.replace(/\D/g,'')}`;
+  const isPhone = lang === 'zh';
+  
   return (
     <section id="whyus" style={{ padding: '100px 0', background: '#ffffff', position: 'relative' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }} ref={ref}>
@@ -676,14 +697,18 @@ function WhyUs({ C }) {
               {sec.headline[0]}<br/><span style={{ color: '#2563eb', fontStyle: 'italic' }}>{sec.headline[1]}</span><br/>{sec.headline[2]}
             </h2>
             <p style={{ color: '#4b5563', lineHeight: 1.9, marginBottom: 36, fontSize: '0.95rem' }}>{sec.body}</p>
-            <a href={`https://wa.me/${C.whatsapp.replace(/\D/g,'')}`} target="_blank" rel="noreferrer" style={{
-              display: 'inline-block',
-              background: '#2563eb', color: '#ffffff',
-              padding: '14px 36px', borderRadius: 2, textDecoration: 'none',
-              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
-              fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-              boxShadow: '0 8px 32px rgba(37,99,235,0.2)',
-            }}>{sec.cta}</a>
+            <a 
+              href={ctaHref} 
+              target={isPhone ? undefined : '_blank'} 
+              rel={isPhone ? undefined : 'noreferrer'} 
+              style={{
+                display: 'inline-block',
+                background: '#2563eb', color: '#ffffff',
+                padding: '14px 36px', borderRadius: 2, textDecoration: 'none',
+                fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
+                fontSize: '0.82rem', letterSpacing: '0.14em', textTransform: 'uppercase',
+                boxShadow: '0 8px 32px rgba(37,99,235,0.2)',
+              }}>{sec.cta}</a>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'rgba(37,99,235,0.08)' }}>
             {C.whyus.map((w, i) => (
@@ -805,11 +830,11 @@ export default function App() {
   return (
     <>
       <Nav C={C} lang={lang} setLang={setLang} />
-      <Hero C={C} />
-      <Products C={C} />
+      <Hero C={C} lang={lang} />
+      <Products C={C} lang={lang} />
       <Capabilities C={C} />
       <Projects C={C} />
-      <WhyUs C={C} />
+      <WhyUs C={C} lang={lang} />
       <Contact C={C} />
       <Footer C={C} />
     </>
