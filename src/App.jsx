@@ -92,19 +92,19 @@ const CONTENT = {
     ],
 
     capabilities: [
-      { icon: '◈', title: 'Design & Engineering', body: 'In-house facade deepening team producing fabrication-ready shop drawings, connection details, and structural coordination packages.' },
-      { icon: '◉', title: 'Precision Manufacturing', body: 'CNC punching, laser cutting, and press-brake forming at ±0.2mm tolerance. PVDF coating applied in-house.' },
-      { icon: '◎', title: 'Project Management', body: 'From material procurement to site installation, we manage the delivery chain end-to-end with weekly progress reporting.' },
-      { icon: '⊕', title: 'Quality Assurance', body: 'ISO-compliant QMS. Every batch tested for coating adhesion, impact resistance, and dimensional accuracy before dispatch.' },
+      { icon: '◉', title: 'Perforated Punching Expertise', body: 'CNC precision punching at ±0.2mm tolerance. Round, square, hexagonal, or custom hole patterns. Open-area ratios from 10% to 55%. In-house capability from concept to finished sheet.' },
+      { icon: '◆', title: 'Acoustic & Solar Engineering', body: 'Calculate NRC ratings for sound absorption. Design solar shading at 50–85% reduction. Thermal analysis, airflow simulation, and visual comfort assessment included.' },
+      { icon: '⊕', title: 'Material Versatility', body: 'Aluminum, mild steel, stainless steel — all punched to spec. Powder coat, anodize, hot-dip galvanize, or raw finish. Custom edge profiles and framework integration.' },
+      { icon: '◎', title: 'Project Management & Installation', body: 'From shop drawings to site installation. Weekly progress updates, quality inspections, and on-site technical support. We manage logistics and coordinate with architects & contractors.' },
     ],
 
     projects: [
-      { name: 'Corporate HQ Facade', location: 'Guangzhou, China', type: 'ACP Cladding', sqm: '4,200 m²' },
-      { name: 'Shopping Mall Atrium', location: 'Shenzhen, China', type: 'Perforated Panel', sqm: '1,800 m²' },
-      { name: 'Hotel Tower Envelope', location: 'Chengdu, China', type: 'PVDF Panel System', sqm: '6,500 m²' },
-      { name: 'Airport Terminal', location: 'Wuhan, China', type: 'Custom Perforated', sqm: '9,000 m²' },
-      { name: 'Mixed-Use Development', location: 'Hangzhou, China', type: 'ACP + Perforated', sqm: '3,400 m²' },
-      { name: 'Museum Exterior', location: "Xi'an, China", type: 'Anodized Panel', sqm: '2,100 m²' },
+      { name: 'Shopping Mall Atrium', location: 'Shenzhen, China', type: 'Perforated Panel Ceiling', sqm: '1,800 m²' },
+      { name: 'Museum Feature Wall', location: "Xi'an, China", type: 'Custom Hexagonal Perforation', sqm: '2,100 m²' },
+      { name: 'Airport Terminal Facade', location: 'Wuhan, China', type: 'Perforated + Acoustic Control', sqm: '9,000 m²' },
+      { name: 'Corporate HQ Brise-Soleil', location: 'Guangzhou, China', type: 'Solar Shading Perforation', sqm: '4,200 m²' },
+      { name: 'Retail Storefront', location: 'Hangzhou, China', type: 'Custom Perforated Curtain Wall', sqm: '1,200 m²' },
+      { name: 'Hotel Tower Screening', location: 'Chengdu, China', type: 'Stainless Perforated Panels', sqm: '5,600 m²' },
     ],
 
     whyus: [
@@ -123,17 +123,17 @@ const CONTENT = {
     },
 
     capsSection: {
-      eyebrow: 'What We Do',
-      headlineA: 'End-to-End',
-      headlineB: 'Facade Capability',
-      sub: 'From initial concept through to installed facade — we handle design, fabrication, quality control, and project coordination.',
+      eyebrow: 'What We Specialize In',
+      headlineA: 'Perforated Metal',
+      headlineB: 'Mastery',
+      sub: 'From custom hole patterns to acoustic engineering, solar shading design, and precision CNC punching — we are the perforated metal specialists your architect is looking for.',
     },
 
     projectsSection: {
-      eyebrow: 'Track Record',
-      headlineA: 'Selected',
-      headlineB: 'Projects',
-      requestNote: 'Full project portfolio available on request —',
+      eyebrow: 'Our Track Record',
+      headlineA: 'Perforated Metal',
+      headlineB: 'Project Gallery',
+      requestNote: 'Complete portfolio of perforated and mixed-material projects available on request —',
     },
 
     whySection: {
@@ -252,19 +252,19 @@ const CONTENT = {
     ],
 
     capabilities: [
-      { icon: '◈', title: '深化设计与工程', body: '驻场幕墙深化团队出具可制造级深化图纸、节点详图及结构协调文件包。' },
-      { icon: '◉', title: '精密加工制造', body: 'CNC 数控冲压、激光切割及折弯成型，精度 ±0.2mm，氟碳涂料喷涂在厂内完成。' },
-      { icon: '◎', title: '项目管理', body: '从物料采购到现场安装，我们全程管控交付链，每周出具进度报告。' },
-      { icon: '⊕', title: '质量保证', body: '遵循 ISO 质量管理体系，每批板材出厂前均检测涂层附着力、抗冲击性及尺寸精度。' },
+      { icon: '◉', title: '穿孔冲压专业', body: 'CNC 数控冲压，精度 ±0.2mm。圆形、方形、六边形或自定义孔型。开孔率 10% 至 55%。从概念到成品全程in-house完成。' },
+      { icon: '◆', title: '声学与遮阳设计', body: '计算 NRC 吸音系数。设计 50–85% 的遮阳效果。包含热工分析、气流模拟、视觉舒适度评估。' },
+      { icon: '⊕', title: '材料多样性', body: '铝板、碳钢、不锈钢——全部精密冲孔。静电喷涂、阳极氧化、热浸镀锌或原色。支持边缘定制和框架集成。' },
+      { icon: '◎', title: '项目管理与安装', body: '从深化图到现场安装全程把控。每周进度报告、质量检查、现场技术支持。协调物流、与建筑师和承包商无缝对接。' },
     ],
 
     projects: [
-      { name: '企业总部幕墙', location: '中国 广州', type: '铝塑复合板', sqm: '4,200 m²' },
-      { name: '购物中心中庭', location: '中国 深圳', type: '穿孔金属板', sqm: '1,800 m²' },
-      { name: '酒店塔楼外装', location: '中国 成都', type: 'PVDF 板系统', sqm: '6,500 m²' },
-      { name: '机场航站楼', location: '中国 武汉', type: '定制穿孔板', sqm: '9,000 m²' },
-      { name: '综合开发项目', location: '中国 杭州', type: 'ACP + 穿孔组合', sqm: '3,400 m²' },
-      { name: '博物馆外立面', location: '中国 西安', type: '阳极氧化板', sqm: '2,100 m²' },
+      { name: '购物中心中庭', location: '中国 深圳', type: '穿孔板吊顶', sqm: '1,800 m²' },
+      { name: '博物馆特色墙', location: '中国 西安', type: '自定义六边形穿孔', sqm: '2,100 m²' },
+      { name: '机场航站楼', location: '中国 武汉', type: '穿孔板 + 声学控制', sqm: '9,000 m²' },
+      { name: '企业总部遮阳', location: '中国 广州', type: '太阳能遮阳穿孔', sqm: '4,200 m²' },
+      { name: '零售门店幕墙', location: '中国 杭州', type: '定制穿孔幕墙', sqm: '1,200 m²' },
+      { name: '酒店塔楼屏风', location: '中国 成都', type: '不锈钢穿孔板', sqm: '5,600 m²' },
     ],
 
     whyus: [
@@ -283,17 +283,17 @@ const CONTENT = {
     },
 
     capsSection: {
-      eyebrow: '服务能力',
-      headlineA: '端到端',
-      headlineB: '幕墙全流程能力',
-      sub: '从初始概念到安装完成——我们负责设计、制造、质量控制及项目协调。',
+      eyebrow: '我们的专长',
+      headlineA: '穿孔金属板',
+      headlineB: '精通之道',
+      sub: '从自定义孔型到声学工程、遮阳设计、精密数控冲压——我们是您建筑师正在寻找的穿孔金属板专家。',
     },
 
     projectsSection: {
-      eyebrow: '项目业绩',
-      headlineA: '精选',
-      headlineB: '项目案例',
-      requestNote: '完整项目案例集可应要求提供 —',
+      eyebrow: '项目案例',
+      headlineA: '穿孔金属板',
+      headlineB: '作品展示',
+      requestNote: '更多穿孔及组合材料项目案例可应要求提供 —',
     },
 
     whySection: {
