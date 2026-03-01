@@ -436,9 +436,9 @@ function Nav({ C, lang, setLang }) {
 /* ─── HERO ─── */
 function Hero({ C, lang }) {
   const ctaHref = lang === 'zh' 
-    ? `tel:${C.phone.replace(/\s/g, '')}` 
+    ? `https://wa.me/${C.phone.replace(/\D/g, '')}` 
     : `https://wa.me/${C.whatsapp.replace(/\D/g, '')}`;
-  const isPhone = lang === 'zh';
+  const isPhone = false;
 
   return (
     <section style={{
@@ -501,9 +501,9 @@ function Products({ C, lang }) {
   const sec = C.productsSection;
   
   const enquireHref = lang === 'zh'
-    ? `tel:${C.phone.replace(/\s/g, '')}`
+    ? `https://wa.me/${C.phone.replace(/\D/g, '')}`
     : `https://wa.me/${C.whatsapp.replace(/\D/g,'')}?text=Hi, I'm interested in ${encodeURIComponent(p.name)}`;
-  const isPhone = lang === 'zh';
+  const isPhone = false;
 
   return (
     <section id="products" style={{ padding: '100px 0', background: '#f8f9fa' }}>
@@ -683,9 +683,9 @@ function WhyUs({ C, lang }) {
   const [ref, vis] = useInView();
   const sec = C.whySection;
   const ctaHref = lang === 'zh' 
-    ? `tel:${C.phone.replace(/\s/g, '')}` 
+    ? `https://wa.me/${C.phone.replace(/\D/g, '')}` 
     : `https://wa.me/${C.whatsapp.replace(/\D/g,'')}`;
-  const isPhone = lang === 'zh';
+  const isPhone = false;
   
   return (
     <section id="whyus" style={{ padding: '100px 0', background: '#ffffff', position: 'relative' }}>
