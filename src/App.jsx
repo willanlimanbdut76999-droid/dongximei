@@ -13,11 +13,11 @@ const CONTENT = {
     nav: ['Products', 'Capabilities', 'Projects', 'Why Us', 'Contact'],
 
     hero: {
-      eyebrow: 'Commercial Architectural Metalwork',
-      headline: ['Precision Metal', 'Facade Systems'],
-      sub: 'Aluminum composite panels, perforated metal screens, and custom facade solutions — engineered for architecture that commands attention.',
-      cta1: 'Request a Quote',
-      cta2: 'View Capabilities',
+      eyebrow: 'Perforated Metal Excellence',
+      headline: ['Precision Metal', 'Perforation Specialist'],
+      sub: 'Engineered perforated metal panels for architectural drama, acoustic control, and solar shading. From concept to installation — we deliver custom-punched solutions at ±0.2mm tolerance. Factory direct. Global reach.',
+      cta1: 'Request a Sample',
+      cta2: 'View Our Work',
     },
 
     stats: [
@@ -29,10 +29,31 @@ const CONTENT = {
 
     products: [
       {
+        id: 'perforated',
+        name: 'Perforated Metal Panel',
+        short: 'Perforated',
+        desc: 'Our flagship product. Engineered perforated metal panels for sun control, ventilation, acoustic treatment, and dramatic architectural expression. Custom hole patterns, open-area ratios, and edge profiles. The gold standard for modern facades, premium retail, museums, and cultural spaces.',
+        specs: [
+          'Material: Aluminum / Mild Steel / Stainless Steel',
+          'Sheet Thickness: 1.0mm – 4.0mm',
+          'Max Sheet Size: 2,500 × 1,250mm',
+          'Hole Pattern: Round / Square / Hexagonal / Custom',
+          'Hole Diameter: 1mm – 50mm',
+          'Open Area Ratio: 10% – 55%',
+          'Center Distance: 1.5× – 3× hole diameter',
+          'Surface Treatment: Powder coating / Anodizing / Hot-dip galvanizing',
+          'Tolerance: ±0.2mm (CNC punching)',
+          'Acoustic Rating: Up to NRC 0.95',
+          'Solar Control: Up to 85% shading',
+        ],
+        image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=900&q=80',
+        color: '#f5f5ff',
+      },
+      {
         id: 'alucobond',
         name: 'Aluminum Composite Panel',
         short: 'ACP / ACM',
-        desc: 'Lightweight, rigid, and weather-resistant. Our aluminum composite panels are designed for high-rise facades, retail fit-outs, and commercial interiors. Available in a wide range of finishes including PVDF, anodized, mirror, and brushed textures.',
+        desc: 'Lightweight, rigid, and weather-resistant backing solution. Our aluminum composite panels complement perforated designs and work standalone for high-rise facades, retail fit-outs, and commercial interiors. Available in 200+ finishes.',
         specs: [
           'Panel Thickness: 3mm / 4mm / 6mm',
           'Max Width: 1,600mm',
@@ -47,26 +68,6 @@ const CONTENT = {
         ],
         image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
         color: '#f0f4ff',
-      },
-      {
-        id: 'perforated',
-        name: 'Perforated Metal Panel',
-        short: 'Perforated',
-        desc: 'Engineered perforated panels for sun control, ventilation, and architectural expression. Custom hole patterns, open-area ratios, and edge profiles. Suitable for facades, ceilings, balustrades, and feature walls.',
-        specs: [
-          'Material: Aluminum / Mild Steel / Stainless Steel',
-          'Sheet Thickness: 1.0mm – 4.0mm',
-          'Max Sheet Size: 2,500 × 1,250mm',
-          'Hole Pattern: Round / Square / Hexagonal / Custom',
-          'Hole Diameter: 1mm – 50mm',
-          'Open Area Ratio: 10% – 55%',
-          'Center Distance: 1.5× – 3× hole diameter',
-          'Surface Treatment: Powder coating / Anodizing / Hot-dip galvanizing',
-          'Tolerance: ±0.2mm (CNC punching)',
-          'Acoustic & Solar control available',
-        ],
-        image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=900&q=80',
-        color: '#f5f5ff',
       },
       {
         id: 'custom',
@@ -172,11 +173,11 @@ const CONTENT = {
     nav: ['产品', '能力', '项目', '为什么选我们', '联系我们'],
 
     hero: {
-      eyebrow: '商业建筑金属工程',
-      headline: ['精密金属', '幕墙系统'],
-      sub: '铝塑复合板、穿孔金属板及定制幕墙解决方案——专为引人注目的建筑而工程化设计。',
-      cta1: '申请报价',
-      cta2: '查看服务能力',
+      eyebrow: '穿孔金属板专家',
+      headline: ['精密穿孔', '金属板系统'],
+      sub: '为建筑创意、声学控制、遮阳美学而设计的穿孔金属板。从概念到安装——我们提供 ±0.2mm 精度的定制冲孔方案。工厂直供，全球交付。',
+      cta1: '申请样品',
+      cta2: '查看案例',
     },
 
     stats: [
@@ -188,10 +189,31 @@ const CONTENT = {
 
     products: [
       {
+        id: 'perforated',
+        name: '穿孔金属板',
+        short: '穿孔板',
+        desc: '我们的明星产品。专为遮阳控制、通风、声学处理及建筑表达而设计的穿孔金属板。提供自定义孔型、开孔率及边缘型材。是现代建筑、高端零售、博物馆及文化空间的首选方案。',
+        specs: [
+          '材质：铝板 / 碳钢 / 不锈钢',
+          '板材厚度：1.0mm – 4.0mm',
+          '最大板幅：2,500 × 1,250mm',
+          '孔型：圆形 / 方形 / 六边形 / 定制',
+          '孔径：1mm – 50mm',
+          '开孔率：10% – 55%',
+          '孔间距：1.5× – 3× 孔径',
+          '表面处理：静电喷涂 / 阳极氧化 / 热浸镀锌',
+          '加工精度：±0.2mm（CNC 数控冲压）',
+          '声学指数：NRC 达 0.95',
+          '遮阳效果：可达 85% 遮光率',
+        ],
+        image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=900&q=80',
+        color: '#f5f5ff',
+      },
+      {
         id: 'alucobond',
         name: '铝塑复合板',
         short: 'ACP / ACM',
-        desc: '轻质、刚性、耐候性强。我们的铝塑复合板专为高层幕墙、零售装修及商业内装设计，提供 PVDF、阳极氧化、镜面、拉丝等多种表面处理工艺。',
+        desc: '轻质、刚性、耐候性强。我们的铝塑复合板是穿孔板的完美配套，也可独立应用于高层幕墙、零售装修及商业内装。提供 200+ 种表面处理工艺。',
         specs: [
           '板材厚度：3mm / 4mm / 6mm',
           '最大宽度：1,600mm',
@@ -206,26 +228,6 @@ const CONTENT = {
         ],
         image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80',
         color: '#f0f4ff',
-      },
-      {
-        id: 'perforated',
-        name: '穿孔金属板',
-        short: '穿孔板',
-        desc: '专为遮阳控制、通风及建筑表达而设计的穿孔板。提供自定义孔型、开孔率及边缘型材，适用于幕墙、吊顶、护栏及装饰墙。',
-        specs: [
-          '材质：铝板 / 碳钢 / 不锈钢',
-          '板材厚度：1.0mm – 4.0mm',
-          '最大板幅：2,500 × 1,250mm',
-          '孔型：圆形 / 方形 / 六边形 / 定制',
-          '孔径：1mm – 50mm',
-          '开孔率：10% – 55%',
-          '孔间距：1.5× – 3× 孔径',
-          '表面处理：静电喷涂 / 阳极氧化 / 热浸镀锌',
-          '加工精度：±0.2mm（CNC 数控冲压）',
-          '可提供声学及太阳能控制设计',
-        ],
-        image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=900&q=80',
-        color: '#f5f5ff',
       },
       {
         id: 'custom',
@@ -338,10 +340,31 @@ function useInView(threshold = 0.15) {
 /* ─── LOGO ─── */
 function LogoMark() {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" loading="eager">
-      <rect x="2" y="2" width="32" height="32" rx="4" stroke="#2563eb" strokeWidth="1.5" fill="none"/>
-      <path d="M10 18 L18 10 L26 18 L18 26 Z" stroke="#2563eb" strokeWidth="1.2" fill="rgba(37,99,235,0.08)"/>
-      <circle cx="18" cy="18" r="3" fill="#2563eb" opacity="0.7"/>
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Outer circle ring - representing metal */}
+      <circle cx="20" cy="20" r="18" stroke="#2563eb" strokeWidth="1.2" fill="none"/>
+      
+      {/* Perforated holes pattern - hexagonal grid */}
+      {/* Row 1 */}
+      <circle cx="12" cy="12" r="1.8" fill="#2563eb" opacity="0.9"/>
+      <circle cx="20" cy="12" r="1.8" fill="#2563eb" opacity="0.9"/>
+      <circle cx="28" cy="12" r="1.8" fill="#2563eb" opacity="0.9"/>
+      
+      {/* Row 2 (offset) */}
+      <circle cx="16" cy="18" r="1.8" fill="#2563eb" opacity="0.8"/>
+      <circle cx="24" cy="18" r="1.8" fill="#2563eb" opacity="0.8"/>
+      
+      {/* Row 3 */}
+      <circle cx="12" cy="24" r="1.8" fill="#2563eb" opacity="0.9"/>
+      <circle cx="20" cy="24" r="1.8" fill="#2563eb" opacity="0.9"/>
+      <circle cx="28" cy="24" r="1.8" fill="#2563eb" opacity="0.9"/>
+      
+      {/* Row 4 (offset) */}
+      <circle cx="16" cy="30" r="1.8" fill="#2563eb" opacity="0.8"/>
+      <circle cx="24" cy="30" r="1.8" fill="#2563eb" opacity="0.8"/>
+      
+      {/* Center highlight - representing precision */}
+      <circle cx="20" cy="20" r="3.2" stroke="#2563eb" strokeWidth="1" fill="none" opacity="0.6"/>
     </svg>
   );
 }
