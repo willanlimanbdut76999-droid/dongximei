@@ -1,0 +1,24 @@
+
+function LogoMark() {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <svg 
+      width="44" 
+      height="44" 
+      viewBox="0 0 44 44" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ cursor: 'pointer' }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <defs>
+        <style>{`
+          @keyframes pulse-outer { 0%, 100% { r: 19px; opacity: 0.6; } 50% { r: 22px; opacity: 0.1; } }
+          @keyframes rotate-inner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+          @keyframes pulse-dots { 0%, 100% { opacity: 0.8; r: 2.2px; } 50% { opacity: 0.4; r: 1.8px; } }
+          .logo-pulse { animation: pulse-outer 3s ease-in-out infinite; }
+          .logo-rotate { animation: rotate-inner 12s linear infinite; transform-origin: 22px 22px; }
+          .logo-dots { animation: pulse-dots 2s ease-in-out infinite; }
+        `}
