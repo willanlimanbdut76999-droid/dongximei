@@ -167,7 +167,7 @@ const CONTENT = {
     tagline: '洞察每一处细节之美',
     phone: '+86 17683775684',
     email: 'willanlimanbdut76999@gmail.com',
-    whatsapp: '+86 17683775684',
+    whatsapp: '+44 07724707293',
     website: 'dongximei.vercel.app',
 
     nav: ['产品', '能力', '项目', '为什么选我们', '联系我们'],
@@ -736,6 +736,7 @@ function Contact({ C }) {
             <p style={{ color: '#4b5563', lineHeight: 1.9, marginBottom: 48, fontSize: '0.95rem' }}>{ct.sub}</p>
             {[
               { label: 'WhatsApp', value: C.whatsapp, href: `https://wa.me/${C.whatsapp.replace(/\D/g,'')}`, icon: '💬' },
+              { label: 'Phone', value: C.phone, href: `tel:${C.phone}`, icon: '☎️' },
               { label: 'Email', value: C.email, href: `mailto:${C.email}`, icon: '✉' },
               { label: 'Website', value: C.website, href: `https://${C.website}`, icon: '🌐' },
             ].map(m => (
