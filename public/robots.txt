@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: 
+
+Sitemap: https://dongximei.vercel.app/sitemap.xml
+
+# Respect crawl delay for googlebot
+User-agent: Googlebot
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+Disallow: /

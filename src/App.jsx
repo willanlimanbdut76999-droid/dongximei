@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 
 /* ─── BILINGUAL CONTENT ─── */
 const CONTENT = {
@@ -338,11 +338,28 @@ function useInView(threshold = 0.15) {
 /* ─── LOGO ─── */
 function LogoMark() {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" loading="eager">
       <rect x="2" y="2" width="32" height="32" rx="4" stroke="#2563eb" strokeWidth="1.5" fill="none"/>
       <path d="M10 18 L18 10 L26 18 L18 26 Z" stroke="#2563eb" strokeWidth="1.2" fill="rgba(37,99,235,0.08)"/>
       <circle cx="18" cy="18" r="3" fill="#2563eb" opacity="0.7"/>
     </svg>
+  );
+}
+
+/* ─── OPTIMIZED IMAGE COMPONENT ─── */
+function OptimizedImg({ src, alt, ...props }) {
+  const srcBase = src.split('?')[0];
+  const srcSet = `${srcBase}?w=400&q=70 400w, ${srcBase}?w=600&q=75 600w, ${srcBase}?w=900&q=80 900w`;
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      srcSet={srcSet}
+      sizes="(max-width: 640px) 100vw, (max-width: 900px) 75vw, 600px"
+      {...props}
+    />
   );
 }
 
@@ -485,11 +502,11 @@ function Products({ C }) {
             <p style={{ color: '#4b5563', lineHeight: 1.9, marginBottom: 28, fontSize: '0.95rem' }}>{p.desc}</p>
 
             <div style={{ width: '100%', height: 230, borderRadius: 4, overflow: 'hidden', border: '1px solid rgba(37,99,235,0.1)', marginBottom: 28, position: 'relative' }}>
-              <img
-                src={p.image} alt={p.name} loading="lazy"
+              <OptimizedImg
+                src={p.image} alt={p.name}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.6s' }}
-                onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
-                onMouseLeave={e => e.target.style.transform = 'scale(1)'}
+                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
               />
             </div>
 
@@ -600,7 +617,7 @@ function Projects({ C }) {
               }}
             >
               <div style={{ height: 230, overflow: 'hidden', background: '#e5e7eb' }}>
-                <img className="pimg" src={projImages[i]} alt={proj.name} loading="lazy"
+                <OptimizedImg className="pimg" src={projImages[i]} alt={proj.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s', filter: 'brightness(0.7)' }}
                 />
               </div>
